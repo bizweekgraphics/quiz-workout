@@ -261,6 +261,7 @@ h2.question {
   display: inline;
   font-size: 12pt;
   font-family: 'Times New Roman', Times, serif;
+  margin: 0;
 }
 
 .outcome h2 {
@@ -279,6 +280,10 @@ button {
   padding: 10px;
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
+}
+
+.choices {
+  margin-top: 10px;
 }
 
 button.choice {
