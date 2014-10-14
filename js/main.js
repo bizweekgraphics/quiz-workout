@@ -5,11 +5,11 @@ $(document).ready(function() {
 
   var comscoreConfig = {
     site: "businessweek",
-    author: "Claire Suddath",
+    author: "Maridel Reyes",
     ctype: "graphic",
     cg1: "Lifestyle",
-    name: "This is a quiz test",
-    pubDate: "20140825"
+    name: "Apps of steel",
+    pubDate: "20141016"
   }
 
   var urlHash = window.location.hash
@@ -20,11 +20,11 @@ $(document).ready(function() {
 
   var _sf_async_config= {uid: 15087, domain: "www.businessweek.com"};
   _sf_async_config.useCanonical = true;
-  
+
   _sf_async_config.sections = "Lifestyle";
-  _sf_async_config.authors = "Claire Suddath";
-  
-  
+  _sf_async_config.authors = "Maridel Reyes";
+
+
   (function(){
     function loadChartbeat() {
       window._sf_endpt=(new Date()).getTime();
@@ -42,7 +42,7 @@ $(document).ready(function() {
 
   $('.popup-twitter').click(function(event) {
     event.preventDefault()
-    var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
+    var textString = "The latest exercise downloads are quick, effective, private, and cheaper than Spinning. Take this quiz to find your next virtual workout"
     var text = encodeURIComponent(textString)
     var width  = 575,
         height = 400,
@@ -56,13 +56,13 @@ $(document).ready(function() {
                  ',left='   + left;
 
     window.open(url, 'twitter', opts);
-    
+
     return false;
   });
 
   $('.popup-linkedin').click(function(event) {
     event.preventDefault()
-    var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
+    var textString = "The latest exercise downloads are quick, effective, private, and cheaper than Spinning. Take this quiz to find your next virtual workout"
     var text = encodeURIComponent(textString)
     var width  = 550,
         height = 420,
@@ -70,7 +70,7 @@ $(document).ready(function() {
         top    = ($(window).height() - height) / 2,
         articleUrl = encodeURIComponent("http://businessweek.com"),
         // url    = $(this).attr('href') + text + "&url=" + articleUrl
-        url = "http://www.linkedin.com/shareArticle?summary=I+just+took+Businessweek%27s+Can+Women+Ever+Get+Ahead+at+Work+quiz%2C+and+you+should+too%2E&title=Can+a+Woman+Ever+Win+at+Work%3F&mini=true&url=" + encodeURIComponent(document.URL)
+        url = "http://www.linkedin.com/shareArticle?mini=true&url=" + encodeURIComponent(document.URL)
         opts   = 'status=1' +
                  ',width='  + width  +
                  ',height=' + height +
@@ -80,13 +80,13 @@ $(document).ready(function() {
                  console.log(url)
 
     window.open(url, 'linkedin', opts);
-    
+
     return false;
-  });  
+  });
 
     $('.popup-facebook').click(function(event) {
     event.preventDefault()
-    var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
+    var textString = "The latest exercise downloads are quick, effective, private, and cheaper than Spinning. Take this quiz to find your next virtual workout"
     var text = encodeURIComponent(textString)
     var width  = 550,
         height = 420,
@@ -103,9 +103,9 @@ $(document).ready(function() {
         console.log(url)
 
     window.open(url, 'facebook', opts);
-    
+
     return false;
-  });   
+  });
 
 
     var navigation = responsiveNav(".nav-collapse", {
@@ -356,7 +356,7 @@ function loaded () {
        scrollTop: $(document).height()-$(window).height()},
        750,
        "swing"
-    );  
+    );
     // $('.slide.question[data-slideindex="0"] .img-container').removeClass('hide-img');
     // var animateClass = quiz[0].animateOut
     // var img = button.parent().next().find('img')
@@ -372,7 +372,7 @@ function loaded () {
     var pointDiv = button.parent().find('.point-div')
 
 
-    pointDiv.css('display', 'block')    
+    pointDiv.css('display', 'block')
 
     if(button.data('points') === 1) {
       pointDiv.text('+1 Point')
@@ -417,7 +417,7 @@ function loaded () {
     if(nextSlide === 9) {
       ga('send', 'event', 'on-outro', 'click', "quiz-finish")
       setTimeout(function() {
-        $('.slide[data-slideindex="'+nextSlide+'"]').show(); 
+        $('.slide[data-slideindex="'+nextSlide+'"]').show();
         $('.popup').click(function(event) {
           event.preventDefault()
           var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
@@ -437,9 +437,9 @@ function loaded () {
 
 
           window.open(url, 'twitter', opts);
-        
+
           return false;
-        });      
+        });
 
         $('html, body').animate({
            scrollTop: document.body.scrollHeight},
@@ -460,15 +460,15 @@ function loaded () {
                scrollTop: document.body.scrollHeight},
                800,
                "swing"
-            );      
+            );
 
-          }, 1000)          
+          }, 1000)
         } else {
           $('html, body').animate({
              scrollTop: document.body.scrollHeight},
              800,
              "swing"
-          );  
+          );
         }
       }
     // }, 1000)
