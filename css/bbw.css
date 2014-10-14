@@ -230,7 +230,7 @@ body {
   font-size: 13pt;
   position: relative;
   margin: 30px;
-  margin: 10px 10px 80px 10px;
+  margin: 10px 10px 30px 10px;
 }
 
 .slide.question p {
@@ -280,6 +280,10 @@ button {
   padding: 10px;
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
+}
+
+button:hover {
+  border: 3px dashed black;
 }
 
 .choices {
