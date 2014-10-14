@@ -2,26 +2,9 @@ body {
   max-width: 970px;
   background: #ffffff;
   color: #444444;
-  font-family: sans-serif;
   line-height: 1.231;
-  font-family: Helvetica, sans-serif;
   padding-bottom: 2em !important;
-}
-
-body.dark_layout {
-  background: #1a1a1a;
-}
-
-body.half {
-  width: 315px;
-}
-
-body.full {
-  width: 630px;
-}
-
-body.wide {
-  width: 970px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 a {
@@ -117,17 +100,6 @@ body {
   font-size: 12px;
 }
 
-.data-credit {
-  text-transform: uppercase;
-  text-align: right;
-  font-size: 10px;
-  margin-top: 50px;
-}
-
-.wide .data-credit {
-  text-align: center;
-}
-
 /* HELPER STUFF */
 
 .ir {
@@ -140,22 +112,6 @@ body {
 
 .clear {
   clear: both;
-}
-
-/* SVG */
-
-#svg-canvas.fullscreen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-path.arrow, polyline.arrow {
-  fill: none;
-  stroke: black;
-  stroke-width: 1;
 }
 
 /* ETC QUIZ */
@@ -180,7 +136,6 @@ body, ul, li {
 
 body {
   font-size: 12px;
-  font-family: helvetica, arial;
   color: black;
   background: transparent;
 }
@@ -233,6 +188,43 @@ body {
   margin-left: 3em;
 }
 
+#start {
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  font-size: 20pt;
+  font-family: 'Druk Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+#title {
+  margin: 0;
+  font-size: 48px;
+  font-family: 'Druk Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+  text-transform: uppercase;
+  line-height: 75px;
+}
+#title strong {
+  font-family: 'Druk Wide Web';
+}
+
+#description {
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+#byline {
+  font-weight: normal;
+  margin-top: -.1em;
+}
+
 .slide {
   text-align: center;
   font-size: 13pt;
@@ -267,58 +259,26 @@ h2.question {
   padding: 10px;
   text-shadow: none;
   display: inline;
-  font-size: 20pt;
-  font-family: 'Druk Web';
-  font-weight:  500;
-  font-style:   normal;
-  font-stretch: normal;
+  font-size: 12pt;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-#start {
-  background: black;
-  color: white;
+.outcome h2 {
   text-transform: uppercase;
   font-size: 20pt;
   font-family: 'Druk Web';
   font-weight:  500;
   font-style:   normal;
   font-stretch: normal;
-}
-
-#title {
-  margin: 0;
-  font-size: 48px;
-  font-family: 'Druk Web';
-  font-weight:  500;
-  font-style:   normal;
-  font-stretch: normal;
-  text-transform: uppercase;
-  line-height: 75px;
-}
-#title strong {
-  font-family: 'Druk Wide Web';
-}
-
-#description {
-  margin: 0 auto;
-  width: 80%;
-  margin-bottom: 1em;
-}
-
-#byline {
-  margin-top: -.1em;
 }
 
 button {
-  background: #ddd;
+  background: white;
   border-radius: 10px;
   border: 3px solid black;
   padding: 10px;
-  font-size: 20pt;
-  font-family: 'Druk Web';
-  font-weight:  500;
-  font-style:   normal;
-  font-stretch: normal;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12pt;
 }
 
 button.choice {
@@ -350,7 +310,6 @@ button.choice {
 @media (min-width: 361px) {
   /* desktop view */
   body {
-    max-width: 970px;
     margin: 0 auto;
   }
 }
