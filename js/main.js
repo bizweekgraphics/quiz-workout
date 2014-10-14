@@ -1,8 +1,6 @@
 var chartBeatModule;
 
 $(document).ready(function() {
-  Waves.displayEffect();
-
   var comscoreConfig = {
     site: "businessweek",
     author: "Maridel Reyes",
@@ -138,200 +136,186 @@ function loaded () {
   var quiz = [
     {
         "id": 0,
-        "question": "IS YOUR BOSS A MAN?",
-        "img": "boss.png",
-        "animateIn": "animated bounceInLeft",
-        "animateOut": "animated bounceOutLeft",
-        "className": "boss",
+        "question": "How much time do you have to exercise today?",
         "choices": [
             {
-                "button": "Yes",
-                "text": "Of course. According to a 2013 Gallup poll, 54% of Americans <a target='_blank' href='http://www.gallup.com/poll/165791/americans-prefer-male-boss.aspx' target='_blank'>have a male boss</a>, versus 30% with a female one. Actually, 35% of Americans would rather work for a man, while 40% have no preference either way.",
-                "points": 1,
+                "button": "None at all",
+                "outcome": "one-minute"
+            },
+            {
+                "button": "15 minutes?",
                 "next": 1
             },
             {
-                "button": "No",
-                "text": "Watch out. Female bosses might not help you get ahead. In 2012, MIT studied U.S. bank branches where half the managers were women. They were just as <a target='_blank' href='http://www.projecteve.com/research-says-women-in-leadership-dont-automatically-promote-women-company-wide/'>unlikely to promote underlings</a>.",
-                "points": 1,
+                "button": "An hour",
                 "next": 4
             }
         ]
     },
     {
         "id": 1,
-        "question": "DOES HE HAVE A WIFE?",
-        "img": "rings.png",
-        "animateIn": "animated tada",
-        "animateOut": "animated bounceOutRight",
-        "className": "wife",
+        "question": "Intense?",
         "choices": [
             {
-                "button": "Yes",
-                "text": "",
-                "points": 0,
+                "button": "Nah, not really",
                 "next": 2
             },
             {
-                "button": "No",
-                "text": "",
-                "points": 0,
+                "button": "Punish me",
                 "next": 3
             }
         ]
     },
     {
         "id": 2,
-        "question": "DOES HIS WIFE WORK?",
-        "img": "notebook.png",
-        "animateIn": "animated bounceInLeft",
-        "animateOut": "animated bounceOutLeft",
-        "className": "wife-work",
+        "question": "Which body parts are you obsessed with?",
         "choices": [
             {
-                "button": "Yes",
-                "text": "Great! In a UNC Kenan Flagler Business School study, male managers married to working women were more likely to <a target='_blank' href='http://asq.sagepub.com/content/59/2/330.full.pdf+html'>recommend female candidates</a> over males for new positions.",
-                "points": 1
+                "button": "Abs",
+                "outcome": "runtastic"
             },
             {
-                "button": "No",
-                "text": "Bad news: A UNC Kenan Flagler Business School study showed married men with stay-at-home wives <a target='_blank' href='http://asq.sagepub.com/content/59/2/330.full.pdf+html'>viewed female colleagues unfavorably</a> and had a tendency to pass them over for promotions.",
-                "points": -1
-            },
-            {
-                "button": "Not applicable!",
-                "text": "OK, carry on...",
-                "points": 0
+                "button": "Not abs",
+                "outcome": "barre3"
             }
         ]
     },
     {
         "id": 3,
-        "question": "DOES HE HAVE A DAUGHTER?",
-        "img": "daughter.png",
-        "animateIn": "slideDown",
-        "animateOut": "animated bounceOutUp",
-        "className": "daughter",
+        "question": "Are you susceptible to cults and/or brainwashing?",
         "choices": [
             {
-                "button": "Yes",
-                "text": "Excellent! If a male CEO has a first child who’s a girl, a female employee’s <a target='_blank' href='http://asq.sagepub.com/content/57/4/669.abstract'>wages will rise</a> by 1.1%. Male employees see a much smaller rise, according to a 2012 issue of Administrative Science Quarterly.",
-                "points": 1
+                "button": "Definitely not",
+                "outcome": "johnson"
             },
             {
-                "button": "No",
-                "text": "Eek. When CEOs have a son, <a target='_blank' href='http://asq.sagepub.com/content/57/4/669.abstract'>all employees’ wages drop</a>, according to a 2012 issue of Administrative Science Quarterly. Fortunately, it’s less than half a percent.",
-                "points": -1
-            },
-            {
-                "button": "Not applicable!",
-                "text": "Carry on then.",
-                "points": 0
+                "button": "Guilty",
+                "outcome": "wod"
             }
         ]
     },
+
     {
         "id": 4,
-        "question": "ARE YOU BLONDE?",
-        "img": "blond.png",
-        "animateIn": "animated rollIn",
-        "animateOut": "animated rollOut",
-        "className": "blond",
+        "question": "Where do you usually train?",
         "choices": [
             {
-                "button": "Yes",
-                "text": "University of Queensland researchers found <a target='_blank' href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blondes make 7% more</a>.",
-                "points": 1
+                "button": "Outside, please",
+                "outcome": "map"
             },
             {
-                "button": "No",
-                "text": "Could you be? University of Queensland researchers found <a target='_blank' href='http://faculty-course.insead.edu/popescu/UDJCore/XtraMaterial/Physical%20appearance%20and%20wages%20Do%20blondes%20have%20more%20fun.pdf'>blondes make 7% more</a>.",
-                "points": -1
+                "button": "I’m a total gym rat",
+                "outcome": "strengthcalc"
+            },
+            {
+                "button": "At home, hotel room, etc.",
+                "next": 5
             }
         ]
     },
     {
         "id": 5,
-        "question": "DO YOU FLIRT AT WORK?",
-        "img": "kiss.png",
-        "animateIn": "animated zoomSmall",
-        "animateOut": "animated fadeOut",
-        "className": "flirt",
+        "question": "How do you expect fitness to make you feel?",
         "choices": [
             {
-                "button": "Yes",
-                "text": "Go for it. In 2012, Berkeley’s Haas School of Business found that <a target='_blank' href='http://newsroom.haas.berkeley.edu/research-news/study-finds-flirting-can-pay-women-negotiations'>women could flirt</a> their way into higher prices when selling cars to men. In 2009, former Sec. of State Madeline Albright told Bill Maher that she flirted with foreign dignitaries so they’d concur.",
-                "points": 1
+                "button": "Energized!",
+                "outcome": "nike"
             },
             {
-                "button": "No",
-                "text": "Safety first; flirting can backfire. A 2013 Academy of Management brief said that even though big law firms <a target='_blank' href='http://aom.org/News/Press-Releases/Masculine-work-environments-encourage-women-to-flirt-–-but-also-exact-a-stiff-price-for-it,-study-finds.aspx'>encouraged strategic flirtation</a>, the women who tried it were looked down upon, considered stupid, and mistreated.",
-                "points": 0
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "question": "DO YOU DRESS UP FOR WORK?",
-        "img": "shoe.png",
-        "animateIn": "animated swing",
-        "animateOut": "animated zoomOutRight",
-        "className": "dress",
-        "choices": [
-            {
-                "button": "Yes",
-                "text": "Well done. According to Proctor & Gamble-funded psychology research conducted at Harvard U., people think women wearing makeup <a target='_blank' href='http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0025656'>look more competent</a> and professional than those who don’t.",
-                "points": 1
+                "button": "Relaxed!",
+                "outcome": "yoga"
             },
             {
-                "button": "No",
-                "text": "This may be ideal. In a study titled “<a target='_blank' href='http://www.ncbi.nlm.nih.gov/pubmed/21932332'>Intolerance of Sexy Peers</a>,” a McMaster U. researcher discovered women were put off by other women who looked too fancy. 85% preferred a thin blond woman in khakis over the same woman in a short skirt and tall boots.",
-                "points": -1
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "question": "HOW’S YOUR WEIGHT?",
-        "img": "peek.png",
-        "animateIn": "animated bounceInLeft",
-        "animateOut": "animated bounceOutLeft",
-        "className": "weight",
-        "choices": [
-            {
-                "button": "I'm good",
-                "text": "Nice! Many studies have proven <a target='_blank' href='http://www.timothy-judge.com/Judge%20and%20Cable%20(JAP%202010).pdf'>a woman’s weight</a> has a significant effect on her earnings potential. The Journal of Applied Psychology reported in 2010 that even very thin women are punished when they gain a little.",
-                "points": 1
-            },
-            {
-                "button": "I could lose a few",
-                "text": "Uh oh. There’s a sad scientific correlation: When a woman’s BMI increases, <a target='_blank' href='https://files.nyu.edu/dc66/public/obesity_income_final.pdf'>her income decreases</a>. Her spouse’s does, too. The effect is most profound on younger women without established careers.",
-                "points": -1
-            }
-        ]
-    },
-    {
-        "id": 8,
-        "question": "DO YOU HAVE GOOD POSTURE?",
-        "img": "boss.png",
-        "animateIn": "animated bounceInLeft",
-        "animateOut": "animated bounceOutLeft",
-        "className": "posture",
-        "choices": [
-            {
-                "button": "Yes",
-                "text": "A Harvard Business School study says you’ll <a target='_blank' href='http://202.154.59.182/ejournal/files/Gender%20in%20Job%20Negotiations.pdf'>look more powerful</a>.",
-                "points": 1
-            },
-            {
-                "button": "No",
-                "text": "Stand up straight. A Harvard Business School study says it will make you <a target='_blank' href='http://202.154.59.182/ejournal/files/Gender%20in%20Job%20Negotiations.pdf'>look more powerful</a>.",
-                "points": -1
+                "button": "Like death!",
+                "outcome": "wod"
             }
         ]
     }
-];
-  var slideCount = quiz.length+2;
+  ];
+
+  var outcomes = [
+    {
+      "id": "map",
+      "name": "Map My Fitness",
+      "description": "Track your running, hiking, and cycling according to pace, distance, calories burned, and more. You can also design or pick a pre-planned interactive route for pretty much any outdoor activity using your smartphone’s GPS, then map the path in real time. The app syncs up well with Fitbit, Nike+, and other workout gadgets.",
+      "price": "Free",
+      "ios": "http://itunes.apple.com/us/app/imapmyfitness/id298903147?mt=8",
+      "android": "https://play.google.com/store/apps/details?id=com.mapmyfitness.android2&feature=nav_result#?t=W251bGwsMSwyLDNd",
+      "url": "http://www.mapmyfitness.com/"
+    },
+    {
+      "id": "strengthcalc",
+      "name": "StrengthCalc",
+      "description": "Don’t want to fumble with math in the weight room? This calculates how many reps you must lift to add, say, a pound of muscle mass. Choose from beginner, intermediate, and advanced sequences if you want to become a better bodybuilder; there are modes for achieving personal goals and others that train for weightlifting competitions. Then just plug in your lift numbers, weight, and age to monitor strength progression.",
+      "price": "99¢",
+      "ios": "https://itunes.apple.com/us/app/strengthcalc/id825874832?mt=8",
+      "android": false,
+      "url": false
+    },
+    {
+      "id": "johnson",
+      "name": "Johnson & Johnson Official 7 Minute Workout",
+      "description": "The exercise physiologist behind a high-intensity interval-training sequence that went viral in 2013 developed this app. Cycle through 12 simple, 30-second moves such as jumping jacks and tricep dips, with a 10-second break between each, using nearby walls, chairs, and floors.",
+      "price": "Free",
+      "ios": "https://itunes.apple.com/us/app/johnson-johnson-official-7/id784797900?ls=1&mt=8",
+      "android": "https://play.google.com/store/apps/details?id=com.jnj.sevenminuteworkout",
+      "url": "https://7minuteworkout.jnj.com/"
+    },
+    {
+      "id": "one-minute",
+      "name": "1-Minute Desk Workout",
+      "description": "This back-to-basics plan counts down 60 seconds of simple stretches that you can do discreetly anywhere. (Hand squeezes and foot flexes are good in meetings.) A clever “secret” mode allows you to easily minimize the screen in case your boss swings by.",
+      "price": "Free",
+      "ios": "https://itunes.apple.com/us/app/1-minute-desk-workout/id697738415?mt=8",
+      "android": false,
+      "url": false
+    },
+    {
+      "id": "wod",
+      "name": "Custom WOD",
+      "description": "Create a CrossFit-like workout outside those grunt-filled garages by inputting the equipment you have available (e.g., dumbbells and jump rope) and your space (pool, office wall, etc.). Out comes a Paleo-friendly directive that takes 10 minutes.",
+      "price": "Free",
+      "ios": "https://itunes.apple.com/us/app/custom-wod/id703495173?mt=8",
+      "android": false,
+      "url": false
+    },
+    {
+      "id": "nike",
+      "name": "Nike Training Club",
+      "description": "Choose from 100 full-body videos in 15-, 30-, or 45-minute increments (some with Nike-sponsored athletes like Maria Sharapova and Serena Williams) or select a targeted four-week schedule, such as Get Lean or Get Strong. Most of these include videos, or you can stream music through the app from your own library during workouts. Link it with Nike+ to measure progress.",
+      "price": "Free",
+      "ios": "https://itunes.apple.com/us/app/nike-training-club/id301521403?mt=8",
+      "android": "https://play.google.com/store/apps/details?id=com.nike.ntc&hl=en",
+      "url": "http://www.nike.com/us/en_us/c/womens-training/apps/nike-training-club"
+    },
+    {
+      "id": "runtastic",
+      "name": "Runtastic Six Pack Abs",
+      "description": "Lifelike avatars in short HD videos take you through mat routines that become progressively harder as weeks pass. The sorta-creepy guide helps you check your form and shames you into sticking to the training plan. The app also offers 99¢ playlists that keep you moving with dance remixes of top-40 hits.",
+      "price": "Free",
+      "ios": "https://itunes.apple.com/app/id685857245?mt=8&ign-mpt=uo%3D4",
+      "android": "https://play.google.com/store/apps/details?id=com.runtastic.android.sixpack.lite",
+      "url": "https://www.runtastic.com/sixpack"
+    },
+    {
+      "id": "barre3",
+      "name": "barre3",
+      "description": "The low-impact, ballet barre-style videos last only 10 minutes, but they get muscles quaking. All you need is waist-level support such as a chair or desk to perform graceful moves. Healthy recipes and mindfulness podcasts are included.",
+      "price": "$4.99",
+      "ios": "https://itunes.apple.com/us/app/barre3/id709892299?mt=8",
+      "android": false,
+      "url": "http://www.barre3.com/mobile-app/"
+    },
+    {
+      "id": "yoga",
+      "name": "Track Yoga",
+      "description": "These Hatha-style sessions for beginner to intermediate users are organized by theme—stress relief, bedtime, energy, balance, and more. Download a video class, choose specific postures, or create a structured program that helps you reach particular goals such as improving flexibility or toning muscles.",
+      "price": "Free",
+      "ios": "https://itunes.apple.com/us/app/track-yoga-yoga-for-flexibility/id878893635?mt=8",
+      "android": false,
+      "url": false
+    }
+  ];
 
   $("body").append(_.template($("#introTemplate").html()));
 
@@ -340,15 +324,15 @@ function loaded () {
     $("body").append(_.template(template, {"q": q, "i": i}));
   });
 
-  $("body").append(_.template($("#outroTemplate").html()));
-  $("#outro").attr("data-slideindex", quiz.length);
+  var outcomeTemplate = $("#outcomeTemplate").html();
+  _.each(outcomes, function(outcome, i) {
+    $("body").append(_.template(outcomeTemplate, {"outcome": outcome, "i": i}));
+  });
 
   $("#start").click(function(e) {
     var button = $(e.target);
 
     ga('send', 'event', 'start-button', 'click', "start-click")
-
-
 
     $('.slide.question[data-slideindex="0"]').show();
 
@@ -357,145 +341,27 @@ function loaded () {
        750,
        "swing"
     );
-    // $('.slide.question[data-slideindex="0"] .img-container').removeClass('hide-img');
-    // var animateClass = quiz[0].animateOut
-    // var img = button.parent().next().find('img')
-    // img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-    //   img.addClass(animateClass)
-    // })
   })
 
   $("button.choice").click(function(e) {
     var button = $(e.target);
     var slide = button.closest(".question");
 
-    var pointDiv = button.parent().find('.point-div')
-
-
-    pointDiv.css('display', 'block')
-
-    if(button.data('points') === 1) {
-      pointDiv.text('+1 Point')
-      pointDiv.css('color', '#0f0')
-      pointDiv.data('points', 1)
-    } else if (button.data('points') === -1) {
-      pointDiv.text('-1 Point')
-      pointDiv.css('color', 'red')
-      pointDiv.data('points', -1)
-    } else {
-      pointDiv.text('+0 Points')
-      pointDiv.css('color', 'black')
-      pointDiv.data('points', 0)
-    }
-
-    // show points and text
-    // slide.find("button").removeClass("active");
-    // button.addClass("active");
-    slide.find("p").html(button.data("text"));
-
-    // update point total
-    // var answers = $(".choice.active");
-    // var pointTotal = answers.toArray().reduce(function(a,b) {
-    //   return a + $(b).data("points");
-    // }, 0);
-
-    var answers = $('.point-div')
-
-    var pointTotal = answers.toArray().reduce(function(a,b) {
-      if($(b).data("points") == undefined) {
-        $(b).data("points", 0)
-      }
-      return a + $(b).data("points");
-    }, 0);
-
-    $("#point-total").text(pointTotal);
-    $("#point-total-text").text(pointText(pointTotal));
-
-    // progressive reveal (show next slide)
-    var nextSlide = button.data("nextslide") ? button.data("nextslide") : slide.data("slideindex")+1;
-
-    if(nextSlide === 9) {
+    // show next slide or outcome
+    if(button.data('nextslide')) {
+      $('.slide[data-slideindex="'+button.data('nextslide')+'"]').show();
+    } else if(button.data('outcome')) {
       ga('send', 'event', 'on-outro', 'click', "quiz-finish")
-      setTimeout(function() {
-        $('.slide[data-slideindex="'+nextSlide+'"]').show();
-        $('.popup').click(function(event) {
-          event.preventDefault()
-          var textString = "I just took @BW's Can Women Ever Get Ahead at Work quiz, and you should too."
-          var text = textString.split(' ').join('%20')
-          var width  = 575,
-              height = 400,
-              left   = ($(window).width()  - width)  / 2,
-              top    = ($(window).height() - height) / 2,
-              url    = this.href + text,
-              opts   = 'status=1' +
-                       ',width='  + width  +
-                       ',height=' + height +
-                       ',top='    + top    +
-                       ',left='   + left;
-
-
-
-
-          window.open(url, 'twitter', opts);
-
-          return false;
-        });
-
-        $('html, body').animate({
-           scrollTop: document.body.scrollHeight},
-           600,
-           "swing"
-        );
-      }, 1500)
-    } else {
-      $('.slide[data-slideindex="'+nextSlide+'"]').show();
+      $('#outcome-'+button.data('outcome')).show();
     }
 
     // scroll to bottom of page (to reveal next question)
-    // setTimeout(function() {
-      if($('#outro').css('display') === "none"){
-        if(window.innerHeight < 600) {
-          setTimeout(function() {
-            $('html, body').animate({
-               scrollTop: document.body.scrollHeight},
-               800,
-               "swing"
-            );
-
-          }, 1000)
-        } else {
-          $('html, body').animate({
-             scrollTop: document.body.scrollHeight},
-             800,
-             "swing"
-          );
-        }
-      }
-    // }, 1000)
-
-    var thisSlide = button.parent().parent().data('slideindex')
-
-      var animateClass = quiz[thisSlide].animateOut
-      var imgContainer = $('.slide[data-slideindex="'+(thisSlide)+'"] .img-container')
-      $(imgContainer).removeClass('hide-img')
-      var img = $('.slide[data-slideindex="'+(thisSlide)+'"] img')
-      img.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
-        img.removeClass()
-        img.addClass(animateClass)
-      })
-
+    $('html, body').animate({
+       scrollTop: document.body.scrollHeight},
+       800,
+       "swing"
+    );
 
   })
-
-  function pointText(points) {
-    if(points>5) {
-      return "You get a raise!";
-    } else if (points >= 0) {
-      return "Tread carefully. Oh, and maybe get some highlights.";
-    } else {
-      return "Have you thought about quitting your job?";
-    }
-  }
-
 
 }

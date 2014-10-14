@@ -238,7 +238,6 @@ body {
   font-size: 13pt;
   position: relative;
   margin: 30px;
-  /*text-shadow: #fff 1px 1px 0px;*/
   margin: 10px 10px 80px 10px;
 }
 
@@ -247,11 +246,7 @@ body {
 }
 
 /* progressive reveal of quiz slides */
-.slide.question {
-  display:none;
-}
-#outro {
-  max-height: 300px;
+.slide.question, .slide.outcome {
   display:none;
 }
 
@@ -269,7 +264,6 @@ h2.question {
   color: white;
   border-radius: 9px;
   border: 2px solid black;
-  text-transform: uppercase;
   padding: 10px;
   text-shadow: none;
   display: inline;
@@ -280,22 +274,35 @@ h2.question {
   font-stretch: normal;
 }
 
-#title {
-  margin: 0;
-  font-size: 48px;
+#start {
+  background: black;
+  color: white;
   text-transform: uppercase;
+  font-size: 20pt;
   font-family: 'Druk Web';
   font-weight:  500;
   font-style:   normal;
   font-stretch: normal;
+}
+
+#title {
+  margin: 0;
+  font-size: 48px;
+  font-family: 'Druk Web';
+  font-weight:  500;
+  font-style:   normal;
+  font-stretch: normal;
+  text-transform: uppercase;
   line-height: 75px;
 }
 #title strong {
   font-family: 'Druk Wide Web';
 }
 
-#title strong {
-  font-family: 'Druk Wide Web';
+#description {
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom: 1em;
 }
 
 #byline {
@@ -306,7 +313,6 @@ button {
   background: #ddd;
   border-radius: 10px;
   border: 3px solid black;
-  text-transform: uppercase;
   padding: 10px;
   font-size: 20pt;
   font-family: 'Druk Web';
@@ -315,238 +321,16 @@ button {
   font-stretch: normal;
 }
 
-button[data-points="-1"] {
-  background: #fcc;
-}
-
-button[data-points="1"] {
-  background: #cfc;
-}
-
-/*button:hover {
-  -webkit-animation: radiate 1s linear;
-  -webkit-animation-iteration-count: infinite;
-  border-style: double;
-  border-width: 3px;
-}*/
-@-webkit-keyframes radiate {
-  0% {border-radius: 10px;}
-  25% {border-radius: 30px;}
-  50% {border-radius: 10px;}
-  75% {border-radius: 0px;}
-  100% {border-radius: 10px;}
-}
-
 button.choice {
   position: relative;
   margin: 10px;
-}
-
-button.choice .points {
-  display: none;
-  background: #ccc;
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  padding: 5px;
-  border-radius: 15px;
-  border: 2px solid black;
-}
-
-.point-div {
-  display: none;
-  height: 30px;
-  width: 100% !important;
-  padding: 10px;
-  margin: 0 auto;
-  margin-top: .25em;
-  margin-bottom: .75em;
-  border-radius: 10px;
-  -webkit-animation: zoomHuge .5s; /* Safari and Chrome */
-     -moz-animation: zoomHuge .5s; /* Firefox */
-      -ms-animation: zoomHuge .5s; /* Internet Explorer */
-       -o-animation: zoomHuge .5s; /* Opera */
-          animation: zoomHuge .5s;
-  -webkit-transition: background-color .5s linear;
-     -moz-transition: background-color .5s linear;
-       -o-transition: background-color .5s linear;
-      -ms-transition: background-color .5s linear;
-          transition: background-color .5s linear;
-}
-
-.pulse-text {
-    -webkit-animation: pulseText 1s infinite;
-     -moz-animation: pulseText 1s infinite;
-       -o-animation: pulseText 1s infinite;
-      -ms-animation: pulseText 1s infinite;
-          animation: pulseText 1s infinite;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Firefox */
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Safari and Chrome */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}​
-
-/* Opera */
-@-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}​
-
-
-
-button.choice.active .points {
-  display: inherit;
-}
-
-button[data-points="-1"] .points {
-  background: #f00;
-}
-
-button[data-points="1"] .points {
-  background: #0f0;
-}
-
-#description {
-  margin: 0 auto;
-  width: 80%;
-  margin-bottom: 1em;
-}
-
-.choice-text {
-  margin: 0 auto;
-  margin-top: 1em;
-  width: 80%;
-}
-
-/* thx http://jsfiddle.net/mandynicole/7xrKP/ */
-.pulser {
-    border: 3px solid #f0f;
-    -webkit-border-radius: 30px;
-    height: 35px;
-    width: 35px;
-    position: absolute;
-    -webkit-animation: pulsate 1s ease-out;
-    -webkit-animation-iteration-count: infinite;
-    opacity: 0.0
-}
-@-webkit-keyframes pulsate {
-    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
-    50% {opacity: 1.0;}
-    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
-}
-
-.nav-arrow-wrapper .pulser {
-  right:3px;
-  top:2px;
-  z-index:-1;
-}
-
-/*img styling*/
-
-.img-container {
-  display: block;
-  position: relative;
-  width: 0;
-  height: 0;
-  left: 10%;
-  top: 60px;
-}
-
-.hide-img {
-  display: none !important;
-}
-
-.question img {
-  pointer-events: none;
-  bottom: 0px;
-  left: 0px;
-  /*max-width: 20% !important;*/
-  /*height:auto;*/
-  position: absolute;
-  display: block;
-  height: auto;
-  max-width: 200px;
-  z-index: 10;
-}
-
-.wife {
-  left: 65%;
-}
-
-.wife-work {
-  top: 150px;
-}
-
-.daughter {
-  top: 150px;
-  left: 75%;
-}
-
-.daughter img {
-  height: 200px;
-}
-
-.flirt {
-  left: 40%;
-}
-
-.blond {
-  left: 20%;
-  top: 150px;
-}
-
-.dress {
-  left: 60%;
-}
-
-.weight {
-  top: 200px;
-  left: -5%
-}
-
-.raptor {
-  position: relative;
-  left: 75%;
-  bottom: 500px;
-  max-height: 700px;
-  -webkit-animation: raptorCrawl 2s; /* Safari and Chrome */
-     -moz-animation: raptorCrawl 2s; /* Firefox */
-      -ms-animation: raptorCrawl 2s; /* Internet Explorer */
-       -o-animation: raptorCrawl 2s; /* Opera */
-          animation: raptorCrawl 2s;
-          -webkit-animation-delay: 2s; /* Safari and Chrome */
-          animation-delay: 2s;
-}
-
-#story-link {
-  color: black;
 }
 
 @media (max-width: 895px) {
   #header-social {
     display: none;
   }
-
-    .ad-div {
+  .ad-div {
     display: none;
   }
 
@@ -558,19 +342,9 @@ button[data-points="1"] .points {
   #description {
     width: 90%;
   }
-
-  .choice-text {
-    width: 90%;
-  }
-
-  .point-div {
-    width: 25%;
-  }
-
   h2.question{
     display: block;
   }
-
 }
 
 @media (min-width: 361px) {
@@ -579,22 +353,10 @@ button[data-points="1"] .points {
     max-width: 970px;
     margin: 0 auto;
   }
-  #title {
-    font-size: 72px;
-  }
-  .slide {
-    font-size: 20px;
-  }
-  button, h2.question {
-    font-size: 48px;
-  }
 }
 
 @media (max-width: 360px) {
-    #title {
+  #title {
     line-height: 50px;
   }
-
 }
-
-

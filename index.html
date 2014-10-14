@@ -102,21 +102,13 @@
   <script type="text/html" id="quizTemplate">
   <div class="slide question" data-slideindex="<%= q.id %>">
     <h2 class="question"><%= q.question %></h2>
-    <div class="hide-img img-container <%= q.className %>">
-      <img class="<%= q.animateIn %>" src="img/<%= q.img %>"></img>
-    </div>
-    <div class="clear" style="clear:both;margin:20px;"></div>
     <div class="choices">
     <% _.each(q.choices, function(choice) { %>
-      <button class="waves-effect waves-button waves-light waves-float choice" data-points="<%= choice.points %>" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>">
+      <button class="choice" data-text="<%= choice.text %>" data-nextslide="<%= choice.next %>" data-outcome="<%= choice.outcome %>">
         <%= choice.button %>
-        <div class="points"><%=choice.points%></div>
       </button>
     <% }); %>
-    <div class="point-div">+1</div>
     </div>
-    <div class="zoomHuge point-div">+1</div>
-    <p class="choice-text"></p>
   </div>
   </script>
 
@@ -125,15 +117,17 @@
     <h2 id="title"><strong>Apps</strong> of steel</h2>
     <h3 id="byline">By Maridel Reyes</h3>
     <p id="description">The latest exercise downloads are quick, effective, private, and cheaper than Spinning. Take this quiz to find your next virtual workout</p>
-    <button class="waves-effect waves-button waves-light waves-float" id="start">Start</button>
+    <button id="start">Let’s get going</button>
   </div>
   </script>
 
-  <script type="text/html" id="outroTemplate">
-  <div class="slide animated bounceInLeft" id="outro">
-    <h2 class="pulse-text">Total Points: <span id="point-total">0</span></h2>
-    <p id="point-total-text">Outro description text</p>
-    <a class="twitter popup" id="story-link" href="http://twitter.com/intent?text="><button class="waves-effect waves-button waves-light waves-float">Tweet</button></a>
+  <script type="text/html" id="outcomeTemplate">
+  <div class="slide outcome" id="outcome-<%= outcome.id %>">
+    <h2><%= outcome.name %></h2>
+    <p><%= outcome.description %> <em><%= outcome.price %></em></p>
+    <% if(outcome.ios) { %><a href="<%= outcome.ios %>"><button>iOS</button></a><% } %>
+    <% if(outcome.android) { %><a href="<%= outcome.ios %>"><button>Android</button></a><% } %>
+    <% if(outcome.url) { %><a href="<%= outcome.ios %>"><button>Website</button></a><% } %>
   </div>
 
   </script>
